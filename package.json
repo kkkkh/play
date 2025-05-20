@@ -1,0 +1,19 @@
+{
+  "name": "@play/play",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev:ladle": "pnpm ladle serve",
+    "build:ladle": "pnpm ladle build"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@ladle/react": "^5.0.3",
+    "@vitejs/plugin-react": "^4.4.1",
+    "vite": "^6.3.5"
+  }
+}
