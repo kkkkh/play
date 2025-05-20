@@ -1,6 +1,6 @@
 /** @type {import('@ladle/react').UserConfig} */
 export default {
   outDir: "./docs",
-  base: "/play/",
+  // base: "/play/",
   stories: "./packages/**/src/**/*.stories.{js,jsx,ts,tsx,mdx}",
 };
