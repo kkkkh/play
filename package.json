@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev:ladle": "ladle serve",
-    "build:ladle": "ladle build"
+    "build:ladle": "ladle build",
+    "preview:ladle": "ladle preview"
   },
   "dependencies": {
     "react": "^19.0.0",

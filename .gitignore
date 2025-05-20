@@ -10,6 +10,8 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+docs/*
+!docs/.gitignore
 dist
 dist-ssr
 *.local
