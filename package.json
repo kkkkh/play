@@ -4,8 +4,8 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev:ladle": "pnpm ladle serve",
-    "build:ladle": "pnpm ladle build"
+    "dev:ladle": "ladle serve",
+    "build:ladle": "ladle build"
   },
   "dependencies": {
     "react": "^19.0.0",
