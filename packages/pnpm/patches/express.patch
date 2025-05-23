@@ -1,0 +1,11 @@
+diff --git a/index.js b/index.js
+index d219b0c878dc6136eb2096cffa140bf6bf2b8e9c..eb51bf969926d4b82e53633c28389fc2a1121530 100644
+--- a/index.js
++++ b/index.js
+@@ -8,4 +8,6 @@
+ 
+ 'use strict';
+ 
++console.log('test express patch')
++
+ module.exports = require('./lib/express');

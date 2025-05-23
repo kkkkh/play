@@ -1,0 +1,2 @@
+patchedDependencies:
+  express: patches/express.patch
