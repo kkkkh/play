@@ -1,0 +1,21 @@
+{
+  "name": "@play/eslint-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint",
+    "eslint:debug": "eslint --debug",
+    "eslint:inspect": "eslint --inspect-config"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.10.0",
+  "devDependencies": {
+    "eslint": "^9.27.0",
+    "lodash": "^4.17.21"
+  }
+}
