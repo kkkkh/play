@@ -11,7 +11,7 @@ export default defineConfig([
 			ignorePatterns 弃用
 			.eslintignore 也不被支持了（ ESLintIgnoreWarning: The ".eslintignore" file is no longer supported.）
 		*/
-    ignores: ["eslint-plugin-*.js"],// ignores配置
+		ignores: ["eslint-plugin-*.js"],// ignores配置
 		// 参考：https://eslint.org/docs/latest/use/configure/configuration-files#specifying-files-and-ignores
 		// 参考：https://eslint.org/docs/latest/use/configure/ignore
 		plugins: {
