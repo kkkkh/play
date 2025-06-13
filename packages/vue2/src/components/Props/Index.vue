@@ -1,0 +1,35 @@
+<template>
+  <div>
+    <h4>Props 父子组件通信</h4>
+    <div><span>Name:</span> <input type="text" v-model="form.name" /></div>
+    <div><span>Age:</span> {{ form.age }}</div>
+    <div><span>Email:</span> {{ form.email }}</div>
+    <div><span>Address:</span> {{ form.address }}</div>
+    <div style="text-align: left; margin-top: 20px;">child</div>
+    <Child :form="form" />
+    <div style="text-align: left; margin-top: 20px;">child2</div>
+    <Child2 :form.sync="form" />
+  </div>
+</template>
+
+<script>
+import Child from './Child.vue'
+import Child2 from './Child2.vue'
+
+export default {
+  components: {
+    Child,
+    Child2
+  },
+  data() {
+    return {
+      form: {
+        name: '1',
+        age: 0,
+        email: '2',
+        address: '3'
+      }
+    }
+  }
+}
+</script>
