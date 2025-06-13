@@ -9,17 +9,24 @@
     <Child :form="form" />
     <div style="text-align: left; margin-top: 20px;">child2</div>
     <Child2 :form.sync="form" />
+    <div style="text-align: left; margin-top: 20px;">child3</div>
+    <Child3 :form.sync="form" />
+    <div style="text-align: left; margin-top: 20px;">child4</div>
+    <Child4 :name.sync="form.name"/>
   </div>
 </template>
 
 <script>
 import Child from './Child.vue'
 import Child2 from './Child2.vue'
-
+import Child3 from './Child3.vue'
+import Child4 from './Child4.vue'
 export default {
   components: {
     Child,
-    Child2
+    Child2,
+    Child3,
+    Child4
   },
   data() {
     return {

@@ -9,8 +9,8 @@ const formRef = reactive(props.form)
 <template>
   <div>
     <div><span>Name:</span> {{ formRef.name }}</div>
-    <div><span>Age:</span> <input type="number" v-model="formRef.age" /></div>
-    <div><span>Email:</span> <input type="email" v-model="formRef.email" /></div>
+    <div><span>Age:</span> <input class="form-input" type="number" v-model="formRef.age" /></div>
+    <div><span>Email:</span> <input class="form-input" type="email" v-model="formRef.email" /></div>
   </div>
 </template>
 
