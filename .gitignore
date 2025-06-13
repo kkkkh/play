@@ -10,9 +10,16 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-docs/*
-!docs/.gitignore
-dist
+
+docs/vue2/*
+docs/vue3/*
+docs/react/*
+
+!docs/vue2/.gitignore
+!docs/vue3/.gitignore
+!docs/react/.gitignore
+
+
 dist-ssr
 *.local
 

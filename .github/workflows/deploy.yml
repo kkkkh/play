@@ -43,8 +43,8 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Install dependencies
         run: pnpm install # npm ci  / yarn install / bun install
-      - name: Build with Ladle
-        run: pnpm build:ladle # npm run docs:build / pnpm docs:build / yarn docs:build / bun run docs:build
+      - name: Build ALL
+        run: pnpm build:all # npm run docs:build / pnpm docs:build / yarn docs:build / bun run docs:build
       - name: Preview
         run: ls docs/ -la
       - name: Upload artifact

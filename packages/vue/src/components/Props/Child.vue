@@ -1,10 +1,18 @@
 <script setup>
 import { reactive } from 'vue'
 const props = defineProps({
-  form: Object,
+  form: {
+    type: Object,
+    default: () => ({
+      name: 'John Doe',
+      age: 20,
+      email: 'john.doe@example.com'
+    })
+  }
 })
 // v-model 绑定 ref(props.form) 或直接props.form（实际使用都可以）
 const formRef = reactive(props.form)
+
 </script>
 <template>
   <div>

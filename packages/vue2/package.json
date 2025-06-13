@@ -1,20 +1,28 @@
 {
-  "name": "vue2",
+  "name": "@play/vue2",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "dev:story": "histoire dev",
+    "build:story": "histoire build",
+    "preview:story": "histoire preview"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.10.0",
+  "dependencies": {
+    "vue": "^2.7.8"
+  },
   "devDependencies": {
+    "@histoire/plugin-vue2": "^0.17.17",
     "@vitejs/plugin-vue2": "^2.3.3",
-    "vite": "^6.3.5",
-    "vue": "^2.7.16"
+    "histoire": "^0.17.17",
+    "vite": "^5.4.19"
   }
 }

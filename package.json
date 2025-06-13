@@ -6,15 +6,28 @@
   "scripts": {
     "dev:ladle": "ladle serve",
     "build:ladle": "ladle build",
-    "preview:ladle": "ladle preview"
+    "preview:ladle": "ladle preview",
+    "dev:story": "histoire dev",
+    "build:story": "histoire build",
+    "preview:story": "histoire preview",
+    "dev:story-vue2": "pnpm --filter @play/vue2 dev:story",
+    "build:story-vue2": "pnpm --filter @play/vue2 build:story",
+    "preview:story-vue2": "pnpm --filter @play/vue2 preview:story",
+    "build:all": "pnpm build:ladle && pnpm build:story && pnpm build:story-vue2"
   },
   "dependencies": {
+    "@play/vue2": "workspace:*",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "vue": "^3.5.16"
   },
   "devDependencies": {
+    "@dotenvx/dotenvx": "^1.44.2",
+    "@histoire/plugin-vue": "1.0.0-alpha.2",
     "@ladle/react": "^5.0.3",
     "@vitejs/plugin-react": "^4.4.1",
+    "@vitejs/plugin-vue": "^5.2.4",
+    "histoire": "1.0.0-alpha.2",
     "vite": "^6.3.5"
   }
 }
