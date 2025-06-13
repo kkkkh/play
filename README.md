@@ -1,9 +1,11 @@
-# play
-code playground
-# packages
-## @play/react
-## @play/nextjs
+## play
+[code playground](https://kkkkh.github.io/play/index.html)
 
-## @paly/npm
-## @paly/pnpm
-## @paly/eslint
+#### [@play/react](https://kkkkh.github.io/play/react/index.html)
+#### [@play/vue2](https://kkkkh.github.io/play/vue2/index.html)
+#### [@play/vue3](https://kkkkh.github.io/play/vue3/index.html)
+#### @play/nextjs
+
+#### @paly/npm
+#### @paly/pnpm
+#### @paly/eslint
