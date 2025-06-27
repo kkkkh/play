@@ -29,5 +29,11 @@
     "@vitejs/plugin-vue": "^5.2.4",
     "histoire": "1.0.0-alpha.2",
     "vite": "^6.3.5"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "esbuild"
+    ]
   }
 }

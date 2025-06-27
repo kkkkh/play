@@ -1,2 +1,10 @@
 packages:
-  - 'packages/*'
+  - packages/*
+ignoredBuiltDependencies:
+  - '@swc/core'
+  - '@tailwindcss/oxide'
+  - electron
+  - esbuild
+  - msw
+  - sharp
+  - unrs-resolver

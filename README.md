@@ -9,3 +9,8 @@
 #### @paly/npm
 #### @paly/pnpm
 #### @paly/eslint
+- @play/eslint-plugin `自定义 eslint插件`
+- eslint-plugin-play `generator-eslint 生成 eslint 插件`
+#### @play/electron
+pnpm intsall 报错Error: Electron uninstall
+npm install 解决
