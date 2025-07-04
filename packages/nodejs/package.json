@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "pnpm run dev:nodemon",
+    "dev": "pnpm run dev:stream",
+    "dev:stream": "concurrently \"pnpm run dev:stream-server\" \"wait-on http://localhost:3000 && pnpm run dev:stream-client\"",
+    "dev:stream-server": "nodemon ./src/stream/server/index.ts",
+    "dev:stream-client": "nodemon ./src/stream/client/index.ts",
+    "dev:fs": "nodemon ./src/fs/index.ts",
     "dev:ts-node": "ts-node --project tsconfig.json index.ts",
     "dev:nodemon": "nodemon index.ts",
     "dev:bun": "bun run --watch index.ts",
@@ -15,11 +19,20 @@
   "license": "ISC",
   "packageManager": "pnpm@10.10.0",
   "devDependencies": {
+    "concurrently": "^9.1.2",
     "nodemon": "^3.1.10",
+    "npm-run-all": "^4.1.5",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4",
+    "wait-on": "^8.0.3"
   },
   "dependencies": {
-    "@types/node": "^24.0.8"
+    "@types/archiver": "^6.0.3",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.0.8",
+    "archiver": "^7.0.1",
+    "axios": "^1.10.0",
+    "extract-zip": "^2.0.1"
   }
 }

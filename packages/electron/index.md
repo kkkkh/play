@@ -19,6 +19,9 @@ AppData 目录下有三个子目录：
 
 - 其他目录
   - temp 目录用于存储应用程序在运行时生成的临时文件。这些文件通常用于缓存数据、处理中间结果或在不同进程之间传递数据。
+    -  `C:\Users\HAOTIA~1.ZHA\AppData\Local\Temp`
   - downloads 目录是用户存储从网络下载文件的默认位置。
+    - `C:\Users\usename\Downloads`
   - exe 文件是打包后的应用程序的主程序。当用户安装你的应用程序后，.exe 文件通常位于安装目录下
+    - `D:\projectname\node_modules\.pnpm\electron@35.5.1\node_modules\electron\dist\electron.exe`
 
