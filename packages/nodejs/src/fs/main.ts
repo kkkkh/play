@@ -53,8 +53,8 @@ export async function removeFileOrDir(dirPath: string): Promise<void> {
 }
 
 const main = async  () => {
-  const dirPath = path.resolve(__dirname, './path/1')
-  const dirPath2 = path.resolve(__dirname, './path/2')
+  const dirPath = path.resolve(__dirname, './files/1')
+  const dirPath2 = path.resolve(__dirname, './files/2')
   await createDirectory(dirPath);
   await createFile(path.resolve(dirPath, '1.txt'))
   await createFile(path.resolve(dirPath2, '2.txt'))

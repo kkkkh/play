@@ -9,6 +9,7 @@
     "dev:stream-server": "nodemon ./src/stream/server/index.ts",
     "dev:stream-client": "nodemon ./src/stream/client/index.ts",
     "dev:fs": "nodemon ./src/fs/index.ts",
+    "dev:fs:download": "nodemon ./src/fs/download/index.ts",
     "dev:ts-node": "ts-node --project tsconfig.json index.ts",
     "dev:nodemon": "nodemon index.ts",
     "dev:bun": "bun run --watch index.ts",
@@ -29,10 +30,12 @@
   },
   "dependencies": {
     "@types/archiver": "^6.0.3",
+    "@types/express": "^5.0.3",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.0.8",
     "archiver": "^7.0.1",
     "axios": "^1.10.0",
+    "express": "^5.1.0",
     "extract-zip": "^2.0.1"
   }
 }

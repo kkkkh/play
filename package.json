@@ -7,13 +7,13 @@
     "dev:ladle": "ladle serve",
     "build:ladle": "ladle build",
     "preview:ladle": "ladle preview",
-    "dev:story": "histoire dev",
-    "build:story": "histoire build",
-    "preview:story": "histoire preview",
+    "dev:story-vue3": "pnpm --filter @play/vue3 dev:story",
+    "build:story-vue3": "pnpm --filter @play/vue3 build:story",
+    "preview:story-vue3": "pnpm --filter @play/vue3 preview:story",
     "dev:story-vue2": "pnpm --filter @play/vue2 dev:story",
     "build:story-vue2": "pnpm --filter @play/vue2 build:story",
     "preview:story-vue2": "pnpm --filter @play/vue2 preview:story",
-    "build:all": "pnpm build:ladle && pnpm build:story && pnpm build:story-vue2"
+    "build:all": "pnpm build:ladle && pnpm build:story-vue3 && pnpm build:story-vue2"
   },
   "dependencies": {
     "@play/vue2": "workspace:*",

@@ -1,0 +1,23 @@
+{
+  "name": "@play/vue3",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "dev:story": "histoire dev",
+    "build:story": "histoire build",
+    "preview:story": "histoire preview"
+  },
+  "dependencies": {
+    "sass": "^1.89.2",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@histoire/plugin-vue": "1.0.0-alpha.2",
+    "@vitejs/plugin-vue": "^5.2.3",
+    "vite": "^6.3.5"
+  }
+}
