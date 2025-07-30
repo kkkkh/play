@@ -1,20 +1,8 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import { fileURLToPath, URL } from 'url';
+import { defineConfig, mergeConfig } from 'vite'
+import baseConfig from './vite.config.base'
+import bigScreenConfig from './vite.config.bigScreen'
 
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [vue()],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
-    },
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@use "@/assets/styles/index.scss" as *;`,
-      },
-    },
-  }
+export default defineConfig(() => {
+  return mergeConfig(baseConfig, bigScreenConfig)
 })
+
