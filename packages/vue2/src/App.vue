@@ -1,12 +1,14 @@
 <template>
   <div id="app">
     <h3>{{ message }}</h3>
-    <PropsIndex />
+    <!-- <PropsIndex /> -->
+    <ExtendIndex />
   </div>
 </template>
 
 <script>
 import PropsIndex from './components/Props/Index.vue';
+import ExtendIndex from './components/Extend/Index.vue';
 export default {
   data() {
     return {
@@ -14,7 +16,8 @@ export default {
     };
   },
   components: {
-    PropsIndex
+    PropsIndex,
+    ExtendIndex,
   },
   methods: {}
 };

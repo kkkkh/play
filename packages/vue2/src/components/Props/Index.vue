@@ -22,6 +22,7 @@ import Child2 from './Child2.vue'
 import Child3 from './Child3.vue'
 import Child4 from './Child4.vue'
 export default {
+  name: 'Props',
   components: {
     Child,
     Child2,
