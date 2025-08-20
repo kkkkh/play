@@ -5,7 +5,7 @@
   </div>
 </template>
 <script>
-import Child from './child.vue'
+import Child from './Child.vue'
 import Vue from 'vue'
 export default {
   name: "Extend",
