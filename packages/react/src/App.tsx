@@ -9,7 +9,6 @@
 // import Ref19 from "./react19/ref/Index"
 import Effect from "./base/effect/Index"
 function App() {
-  debugger
   return (
     <>
       <div>
