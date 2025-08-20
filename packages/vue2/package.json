@@ -17,7 +17,10 @@
   "license": "ISC",
   "packageManager": "pnpm@10.10.0",
   "dependencies": {
-    "vue": "^2.7.8"
+    "element-ui": "^2.15.14",
+    "sortablejs": "^1.15.6",
+    "vue": "^2.7.8",
+    "vxe-table": "3.8.22"
   },
   "devDependencies": {
     "@histoire/plugin-vue2": "^0.17.17",

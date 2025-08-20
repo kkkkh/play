@@ -15,5 +15,5 @@ export default defineConfig({
   vite: {
     base: '/play/vue2/',
   },
-  // setupFile: './histoire.setup.js',
+  setupFile: './histoire.setup.js',
 })
