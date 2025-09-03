@@ -9,7 +9,7 @@
     <Child :form="form" />
     <div style="text-align: left; margin-top: 20px;">child2</div>
     <Child2 :form.sync="form" />
-    <div style="text-align: left; margin-top: 20px;">child3</div>
+    <div style="text-align: left; margin-top: 20px;background:#f0f;">child3 可以作为示例</div>
     <Child3 :form.sync="form" />
     <div style="text-align: left; margin-top: 20px;">child4</div>
     <Child4 :name.sync="form.name"/>

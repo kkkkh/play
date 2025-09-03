@@ -20,6 +20,7 @@
     "element-ui": "^2.15.14",
     "sortablejs": "^1.15.6",
     "vue": "^2.7.8",
+    "vuex": "^3.6.2",
     "vxe-table": "3.8.22"
   },
   "devDependencies": {

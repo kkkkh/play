@@ -4,6 +4,7 @@
     <DirectiveIndex />
     <!-- <PropsIndex /> -->
     <!-- <ExtendIndex /> -->
+    <!-- <PermissionControl /> -->
   </div>
 </template>
 
@@ -11,6 +12,7 @@
 import PropsIndex from './components/Props/Index.vue';
 import ExtendIndex from './components/Extend/Index.vue';
 import DirectiveIndex from './components/Directive/Index.vue';
+// import PermissionControl from './common/PermissionControl.vue';
 export default {
   data() {
     return {
@@ -21,6 +23,7 @@ export default {
     PropsIndex,
     ExtendIndex,
     DirectiveIndex,
+    // PermissionControl,
   },
   methods: {}
 };

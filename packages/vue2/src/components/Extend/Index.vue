@@ -1,6 +1,9 @@
 <template>
   <div class="extend-index">
+    <h4>这是实现的渲染</h4>
     <div id="extend"></div>
+    <br/>
+    <h4>这是实现的innerHTML</h4>
     <div ref="extendElement"></div>
   </div>
 </template>
@@ -32,7 +35,7 @@ export default {
       }
       })
       extendInstance.$mount('#extend')
-      this.$refs.extendElement.textContent  = extendInstance.$el.innerHTML
+      this.$refs.extendElement.textContent  = JSON.stringify(extendInstance.$el.innerHTML)  
       return extendInstance.$el
     }
   }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>v-sortable-drag</h3>
+    <h3>v-sortable-drag 拖拽表头排序</h3>
     <vxe-table
       ref="xTable"
       v-sortable-drag

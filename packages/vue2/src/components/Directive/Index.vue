@@ -1,14 +1,17 @@
 <template>
   <div>
-    <SortableDrag />
-    <TableScroll />
+    <component :is="component" v-for="component in componentsList" :key="component.name" />
   </div>
 </template>
 <script>
-import SortableDrag from './SortableDrag.vue'
-import TableScroll from './TableScroll.vue'
-  export default{
-    name:"Directive",
-    components:{SortableDrag,TableScroll},
+const components = import.meta.glob(['./*.vue','!./Index.vue'],{eager:true,import:'default'})
+const componentsList = Object.values(components)
+export default{
+  name:"Directive",
+  data(){
+    return{
+      componentsList,
+    }
   }
+}
 </script>
