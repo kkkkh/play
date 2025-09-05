@@ -1,6 +1,7 @@
-<script setup>
+<script setup lang="ts">
+import type { Component } from 'vue'
 
-const components = Object.values(import.meta.glob("./*/index.vue", { eager: true, import: 'default' }))
+const components = Object.values(import.meta.glob("./*/index.vue", { eager: true, import: 'default' })) as Component[]
 
 </script>
 
