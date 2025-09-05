@@ -9,7 +9,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
-      'date-fns-tz/dist/esm': 'date-fns-tz/dist/esm/index.js',
     },
   },
   plugins: [
