@@ -1,6 +1,6 @@
 <script setup>
 
-const components = Object.values(import.meta.glob("./*/Index.vue", { eager: true, import: 'default' }))
+const components = Object.values(import.meta.glob("./*/index.vue", { eager: true, import: 'default' }))
 
 </script>
 

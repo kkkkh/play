@@ -10,7 +10,15 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": ["node", "vitest/globals", "w3c-web-serial"]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "vueCompilerOptions": {
+    "target": 3.5
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue","auto-imports.d.ts","src/shims/components.d.ts","histoire.setup.ts"]
 }

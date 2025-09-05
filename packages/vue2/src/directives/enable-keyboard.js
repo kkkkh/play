@@ -80,7 +80,7 @@ const enableKeyboard = {
           console.log('insertLineBreak', el._scanBuffer.join(''))
           el._target_.value = el._scanBuffer.join('')
           el._target_.dispatchEvent(new Event('input', { bubbles: true }))
-          el._previousValue = el._target_.value
+          el._previousValue = el._scanBuffer.join('')
         } else {
           // ⛔ 人工输入回车，禁止
           event.preventDefault()

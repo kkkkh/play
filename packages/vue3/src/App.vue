@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import type { Component } from 'vue'
-
-const components = Object.values(import.meta.glob('./components/**/Index.vue', {
+// import ProvidePermissionControl from '@/common/ProvidePermissionControl.vue'
+import AppProvider from '@/common/AppProvider/index.vue'
+const components = Object.values(import.meta.glob('./components/**/index.vue', {
   eager: true,
   import: 'default'
 })) as Component[]
 
 const componentName = [
-  'BigScreen',
+  // 'BigScreen',
+  'Directive',
   // 'Props'
 ]
 
@@ -18,11 +20,13 @@ const viewComponents = components.filter(component => {
 </script>
 
 <template>
-  <div v-for="component in viewComponents" :key="component.name">
-    <component :is="component" />
-  </div>
+  <AppProvider>
+    <!-- <ProvidePermissionControl> -->
+      <div v-for="component in viewComponents" :key="component.name">
+        <component :is="component" />
+      </div>
+    <!-- </ProvidePermissionControl> -->
+  </AppProvider>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
