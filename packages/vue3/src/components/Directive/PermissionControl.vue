@@ -16,7 +16,9 @@
 </template>
 
 <script setup lang="ts">
-
+defineOptions({
+  name: 'PermissionControl'
+})
 import PermissionControl from '@/common/PermissionControl.vue'
 
 const value1 = ref(false)
