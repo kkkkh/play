@@ -20,17 +20,17 @@ export default defineConfig({
       // vue(),
     ],
     base: '/play/vue3/',
-    optimizeDeps: {
-      include: ['vueuc','date-fns-tz'],
+    // optimizeDeps: {
+    //   include: ['vueuc','date-fns-tz'],
+    // },
+    ssr: {
+      noExternal: ['naive-ui', 'vueuc',], // 确保 SSR / 构建时不会当作 CJS
     },
-    // ssr: {
-    //   noExternal: ['naive-ui', 'vueuc', 'date-fns-tz'], // 确保 SSR / 构建时不会当作 CJS
-    // },
-    // resolve: {
-    //   alias: {
-    //     'date-fns-tz/dist/esm': 'date-fns-tz/dist/esm/index.js',
-    //   },
-    // },
+    resolve: {
+      alias: {
+        'date-fns-tz/dist/esm': 'date-fns-tz/dist/esm/index.js',
+      },
+    },
   },
   setupFile: './histoire.setup.ts',
 })
