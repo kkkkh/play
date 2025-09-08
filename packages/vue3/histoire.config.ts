@@ -1,7 +1,5 @@
 import { defineConfig } from 'histoire'
 import { HstVue } from '@histoire/plugin-vue'
-// import vue from '@vitejs/plugin-vue'
-import viteConfig from './vite.config.ts'
 
 export default defineConfig({
   plugins: [
@@ -16,19 +14,19 @@ export default defineConfig({
     '**/dist/**',
   ],
   vite: {
-    plugins: [
-      // vue(),
-    ],
     base: '/play/vue3/',
     // optimizeDeps: {
-    //   include: ['vueuc','date-fns-tz'],
+    //   include: ['vueuc','date-fns-tz'], // 不起作用
     // },
     ssr: {
-      noExternal: ['naive-ui', 'vueuc', 'date-fns-tz'], // 确保 SSR / 构建时不会当作 CJS
+      // 因为引入ui组件，naive-ui在histoire build 的时候报错
+      // vueuc 和 date-fns-tz 都是按照commonjs 加载了
+      // 这里要错一层处理
+      noExternal: ['naive-ui', 'vueuc', 'date-fns-tz'], // 确保 SSR / 构建时不会当作 CJS 起作用
     },
     // resolve: {
     //   alias: {
-    //     'date-fns-tz/dist/esm': 'date-fns-tz/dist/esm/index.js',
+    //     'date-fns-tz/dist/esm': 'date-fns-tz/dist/esm/index.js', // 不起作用
     //   },
     // },
   },
