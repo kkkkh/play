@@ -24,7 +24,7 @@ export default defineConfig({
     //   include: ['vueuc','date-fns-tz'],
     // },
     ssr: {
-      noExternal: ['naive-ui', 'vueuc', 'date-fns-tz'], // 确保 SSR / 构建时不会当作 CJS
+      // noExternal: ['naive-ui', 'vueuc', 'date-fns-tz'], // 确保 SSR / 构建时不会当作 CJS
     },
     // resolve: {
     //   alias: {
