@@ -42,6 +42,7 @@ const permissionControl = {
         })
       // provide触发
       } else if (format === 'provide') {
+        // #region provide
         const newPermissionControl = vnode?.ctx?.provides[NewPermissionControlKey]
         newPermissionControl(
           value.permissionCode,
@@ -54,6 +55,7 @@ const permissionControl = {
             value.noPermissionHandle?.()
           }
         )
+        // #endregion provide
       }
     })
   },
