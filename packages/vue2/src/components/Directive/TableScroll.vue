@@ -10,13 +10,8 @@
   </div>
 </template>
 <script>
-import { Table as ElTable, TableColumn as ElTableColumn } from 'element-ui'
 export default {
   name: "TableScroll",
-  components: {
-    ElTable,
-    ElTableColumn
-  },
   data () {
     return {
       scroll: false,

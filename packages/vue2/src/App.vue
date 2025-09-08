@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import PropsIndex from './components/Props/Index.vue';
-import ExtendIndex from './components/Extend/Index.vue';
-import DirectiveIndex from './components/Directive/Index.vue';
+import PropsIndex from './components/Props/index.vue';
+import ExtendIndex from './components/Extend/index.vue';
+import DirectiveIndex from './components/Directive/index.vue';
 // import PermissionControl from './common/PermissionControl.vue';
 export default {
   data() {

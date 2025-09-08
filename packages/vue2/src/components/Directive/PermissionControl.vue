@@ -15,12 +15,10 @@
   </div>
 </template>
 <script>
-import { Button as ElButton } from 'element-ui'
 import PermissionControlComponent from '@/common/PermissionControl.vue'
 export default {
   name: "PermissionControl",
   components: {
-    ElButton,
     PermissionControlComponent
   },
   data () {

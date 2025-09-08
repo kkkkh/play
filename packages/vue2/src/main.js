@@ -6,10 +6,7 @@ import 'vxe-table/lib/style.css'
 import '@/directives'
 import store from '@/store'
 import EventBus from '@/utils/eventBus'
-import ElementUI from 'element-ui'
-Vue.use(ElementUI, {
-  size: 'mini',
-})
+
 // 关闭生产环境提示
 Vue.config.productionTip = false
 Vue.prototype.$EventBus = EventBus
