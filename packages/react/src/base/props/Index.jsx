@@ -33,7 +33,8 @@ function App() {
       <button onClick={onClick}>Click me</button>
     </div>
   )
-  return (
+  return (<>
+    <h2>Props</h2>
     <div className="App">
       {/* title 传递一个组件 */}
       <KanbanColumn title={
@@ -47,11 +48,10 @@ function App() {
           { todoList.map((props,index) => <KanbanCard {...props} key={index} />) }
         </ul>
       </KanbanColumn>
-      <h2>我的组件</h2>
       {/* props 传递各种类型的值 */}
       <MyComponent prop1="我的" prop2={123} booleanProp={false}
       onClick={(evt) => {console.log('clicked',evt)}} ></MyComponent>
-    </div>
+    </div></>
   );
 }
 export default App;

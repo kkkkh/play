@@ -7,9 +7,8 @@ export default function Meno () {
     return count + 10
   }, [count])
   useEffect(() => {
-    console.log('useEffect')
+    console.log('useMemo中 useEffect')
   }, [count])
-  console.log('组件渲染')
   return (
     <>
       <h2>useMemo</h2>

@@ -1,16 +1,21 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext,useCallback } from 'react';
 const MyContext = React.createContext('没路用的初始值');
 
 function MyComponent() {
-  const [state1, setState1] = useState('文本');
+  const [state, setState] = useState('state');
   const handleClick = () => {
-    setState1('更新文本');
+    setState(val  => val + "1");
   };
+  const [show, setShow] = useState(false)
+  const showHandle = useCallback(()=>{
+    setShow((status) => !status)
+  },[])
   return (
-    <MyContext.Provider value={state1}>
+    <MyContext.Provider value={{showHandle,state}}>
       <ul>
-        <MyChildComponent />
+        <li>{show ? '显示':'隐藏'}</li>
         <li><button onClick={handleClick}>更新state</button></li>
+        <MyChildComponent />
       </ul>
     </MyContext.Provider>
   );
@@ -23,11 +28,12 @@ function MyChildComponent() {
 }
 
 function MyGrandchildComponent() {
-  const value = useContext(MyContext);
+  const {state,showHandle} = useContext(MyContext);
+  // debugger
   return (
     <>
-      <h2>useContext</h2>
-      <li>{value}</li>
+    <li>{state}</li>
+    <li ><button onClick={showHandle}>更新show</button></li>
     </>
   );
 }

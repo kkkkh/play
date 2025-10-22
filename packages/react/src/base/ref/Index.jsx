@@ -24,7 +24,7 @@ function Test2() {
 export default function App () {
   return (
     <>
-      <h2>ref</h2>
+      <h2>useRef</h2>
       <Test1></Test1>
       <Test2></Test2>
     </>

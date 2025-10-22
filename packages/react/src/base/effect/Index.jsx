@@ -1,25 +1,12 @@
-import { useEffect, useState } from 'react';
 
-export default function App () {
-  const [state, setState] = useState(0);
-  console.log('render')
-  useEffect(() => {
-    console.log('useEffect');
-  });
+import Child1 from './Child1';
+import Child2 from './Child2';
 
-  useEffect(() => {
-    console.log('useEffect1', state);
-  }, [state]);
 
-  useEffect(() => {
-    console.log('useEffect2', state);
-    return () => {
-      console.log('useEffect2 return');
-    };
-  }, [state]);
-
-  return <>
-    <div>Effect</div>
-    <button onClick={() => setState(state + 1)}>setState</button>
-  </>;
+export default function App(){
+  return  <>
+    <h2>useEffect</h2>
+    <Child1 />
+    <Child2 />
+  </>
 }
