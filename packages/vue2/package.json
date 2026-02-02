@@ -17,6 +17,8 @@
   "license": "ISC",
   "packageManager": "pnpm@10.10.0",
   "dependencies": {
+    "@vitejs/plugin-vue2-jsx": "^1.1.1",
+    "big.js": "^7.0.1",
     "element-ui": "^2.15.14",
     "sortablejs": "^1.15.6",
     "vue": "^2.7.8",

@@ -6,6 +6,7 @@ import 'vxe-table/lib/style.css'
 import '@/directives'
 import store from '@/store'
 import EventBus from '@/utils/eventBus'
+import VXETable from './plugin/vxe-table'
 
 // 关闭生产环境提示
 Vue.config.productionTip = false

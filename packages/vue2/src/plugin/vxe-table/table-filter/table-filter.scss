@@ -1,0 +1,106 @@
+.tr-table-filter {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  text-align: left;
+
+  &__condition {
+    width: 100px;
+  }
+
+  &__value {
+    margin-left: 6px;
+    width: 220px;
+  }
+
+  .is-error {
+    .el-input__inner,
+    .el-input__inner:focus,
+    .el-textarea__inner,
+    .el-textarea__inner:focus {
+      border-color: #f56c6c;
+    }
+  }
+}
+
+.tr-table-filter-default {
+  &__input {
+    width: 100%;
+  }
+}
+
+.tr-table-filter-number {
+  &__input {
+    width: 100%;
+  }
+
+  &__tag + &__tag {
+    margin-left: 4px;
+  }
+
+  &__multiple-input,
+  &__multiple-btn {
+    margin-left: 4px;
+  }
+
+  &__between-input {
+    width: 100px;
+  }
+}
+
+.tr-table-filter-date {
+  &__input {
+    width: 100%;
+  }
+
+  &__range-input.el-range-editor {
+    width: 220px;
+  }
+
+  &__multiple-input {
+    width: 120px;
+  }
+}
+
+.tr-table-filter-datetime,
+.tr-table-filter-date {
+  &__input {
+    width: 100%;
+
+    .el-picker-panel {
+      /*
+       * 列表筛选的时间选择器位置调整
+       */
+      left: -100px !important;
+    }
+  }
+
+  &__range-input.el-range-editor {
+    width: 220px;
+
+    .el-picker-panel {
+      /*
+       * 列表筛选的时间选择器位置调整
+       */
+      left: -400px !important;
+    }
+  }
+
+  &__multiple-input {
+    width: 180px;
+  }
+}
+
+.tr-table-filter-time {
+  &__input.el-date-editor.el-input {
+    width: 100%;
+  }
+
+  &__range-input.el-date-editor.el-input {
+    width: 100px;
+  }
+
+  &__multiple-input.el-date-editor.el-input {
+    width: 120px;
+  }
+}

@@ -1,0 +1,18 @@
+.tr-dynamic-tags {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+
+  &__item {
+    margin: 2px;
+
+    & + & {
+      margin-left: 4px;
+    }
+  }
+
+  &__input,
+  &__btn {
+    margin-left: 4px;
+  }
+}

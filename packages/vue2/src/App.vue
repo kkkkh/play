@@ -1,10 +1,11 @@
 <template>
   <div id="app">
     <h3>{{ message }}</h3>
-    <DirectiveIndex />
+    <!-- <DirectiveIndex /> -->
     <!-- <PropsIndex /> -->
     <!-- <ExtendIndex /> -->
     <!-- <PermissionControl /> -->
+     <VxeTableFilter></VxeTableFilter>
   </div>
 </template>
 
@@ -12,7 +13,8 @@
 import PropsIndex from './components/Props/index.vue';
 import ExtendIndex from './components/Extend/index.vue';
 import DirectiveIndex from './components/Directive/index.vue';
-// import PermissionControl from './common/PermissionControl.vue';
+import PermissionControl from './common/PermissionControl.vue';
+import VxeTableFilter from './components/VxeTableFilter/index.vue';
 export default {
   data() {
     return {
@@ -23,7 +25,8 @@ export default {
     PropsIndex,
     ExtendIndex,
     DirectiveIndex,
-    // PermissionControl,
+    PermissionControl,
+    VxeTableFilter
   },
   methods: {}
 };
