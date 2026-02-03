@@ -37,5 +37,6 @@ declare module 'vue' {
     SortableDrag: typeof import('./src/components/Directive/SortableDrag.vue')['default']
     TableScroll: typeof import('./src/components/Directive/TableScroll.vue')['default']
     VxeTableFilter: typeof import('./src/components/VxeTableFilter/index.vue')['default']
+    VxeTablePlus: typeof import('./src/components/VxeTablePlus/index.vue')['default']
   }
 }

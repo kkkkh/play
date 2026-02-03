@@ -5,12 +5,12 @@
 </template>
 <script>
   export default{
-    name:"VxeTableFilterRernder",
+    name:"VxeTablePlusDemo",
     data(){
       return{
         columns: [
-          // { field: 'name', title: 'Name', filters: true,sortable: true },
-          // { field: 'age', title: 'Age', filters: true,sortable: true },
+          { field: 'name', title: 'Name', filters: true,sortable: true },
+          { field: 'age', title: 'Age', filters: true,sortable: true },
           { field: 'date', title: 'Date', filters: true,sortable: true, params:{dataType: 'date'} },
           // { field: 'time', title: 'Time', filters: true,sortable: true, dataType: 'time' },
           // { field: 'datetime', title: 'Datetime', filters: true,sortable: true, dataType: 'datetime' },
