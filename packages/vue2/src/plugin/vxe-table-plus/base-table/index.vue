@@ -46,7 +46,7 @@
   } from '../table-filter'
 import { BaseFilterRenderName } from './constants';
   export default{
-    name:"",
+    name:"BaseTable",
     components:{
       VxeColumn,
       VxeTable,
@@ -103,7 +103,7 @@ import { BaseFilterRenderName } from './constants';
         if (!column.field || column.filters === false) return void 0
 
         const { props: filterRenderProps, ...restFilterRender } = column.filterRender ?? {}
-
+        // debugger
         return {
           name: BaseFilterRenderName, // 关键点，指定渲染器名称
           ...restFilterRender,
@@ -133,6 +133,7 @@ import { BaseFilterRenderName } from './constants';
         // 参数设置
         data.valueType = getColumnFilterValueType(column)
         data.valueFormat = getColumnFilterValueFormat(column, data.valueType)
+        debugger
         // 默认值设置
         if (!data.condition) {
           data.condition = getDefaultFilterCondition(data.valueType)

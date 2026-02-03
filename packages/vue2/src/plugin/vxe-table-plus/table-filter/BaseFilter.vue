@@ -252,5 +252,5 @@ export default {
 </script>
 
 <style lang="scss">
-@use './table-filter.scss' as *;
+@use './base-filter.scss' as *;
 </style>

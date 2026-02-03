@@ -29,7 +29,7 @@ import { filterValue } from './table-filter/filters'
 import { sortValue } from './table-sort'
 
 export default {
-  name: 'VxeTableFilter',
+  name: 'VxeTablePlus',
   components: { BaseTable },
   inheritAttrs: false,
   props: {

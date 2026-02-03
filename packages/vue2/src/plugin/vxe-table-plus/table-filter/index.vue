@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="table-filter">
     <div>
-      <Filter
+      <BaseFilter
         ref="filter"
         :condition.sync="option.data.condition"
         :exclude-conditions="getExcludeConditions"
@@ -17,7 +17,7 @@
       />
     </div>
 
-    <div class="tr-base-table-filter__footer">
+    <div>
       <ElButton size="mini" type="primary" @click="handleFilter">
         筛选
       </ElButton>
@@ -32,7 +32,7 @@
 import { isEmpty } from '../utils'
 import { Button } from 'element-ui'
 
-import Filter from './Filter.vue'
+import BaseFilter from './BaseFilter.vue'
 import { FilterOptions } from './constants'
 import { getColumnDefaultFilterData } from '../base-table/utils'
 
@@ -40,7 +40,7 @@ export default {
   name: 'TableFilter',
   components: {
     ElButton: Button,
-    Filter,
+    BaseFilter,
   },
   props: {
     multiple: {
@@ -65,6 +65,7 @@ export default {
   },
   computed: {
     isCustomOptions() {
+      debugger
       return !!this.options?.length
     },
   },
@@ -81,6 +82,7 @@ export default {
     },
   },
   mounted() {
+    debugger
     // 配置数据
     const { $table, column } = this.scope
 
@@ -134,3 +136,8 @@ export default {
   },
 }
 </script>
+<style lang="scss" scoped>  
+.table-filter {
+  padding: 6px;
+}
+</style>

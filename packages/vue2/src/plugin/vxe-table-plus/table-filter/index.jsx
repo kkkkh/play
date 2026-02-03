@@ -2,10 +2,9 @@ import { filterValue } from './filters'
 import TableFilter from './index.vue'
 import { getColumnDefaultFilterData } from '../base-table/utils'
 
-export const TableFilterRender = {
+export const filterConfig = {
   showFilterFooter: false,
   renderFilter(h, { attrs, props }, params) {
-    // 这里给组件传递数据
     return <TableFilter {...{ attrs, props }} scope={params} />
   },
   // 重置数据方法
