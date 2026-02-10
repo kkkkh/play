@@ -1,11 +1,12 @@
 <template>
   <div>
+    <h4>vxe-table-plus</h4>
     <vxe-table-plus :columns="columns" :all-data="allData" :row-config="{keyField: 'id'}" ></vxe-table-plus>
   </div>
 </template>
 <script>
   export default{
-    name:"VxeTablePlusDemo",
+    name:"VxeTableDemo",
     data(){
       return{
         columns: [

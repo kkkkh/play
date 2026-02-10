@@ -5,7 +5,7 @@
     <!-- <PropsIndex /> -->
     <!-- <ExtendIndex /> -->
     <!-- <PermissionControl /> -->
-     <VxeTableFilter></VxeTableFilter>
+     <VxeTableCom></VxeTableCom>
   </div>
 </template>
 
@@ -14,7 +14,7 @@ import PropsIndex from './components/Props/index.vue';
 import ExtendIndex from './components/Extend/index.vue';
 import DirectiveIndex from './components/Directive/index.vue';
 import PermissionControl from './common/PermissionControl.vue';
-import VxeTableFilter from './components/VxeTableFilter/index.vue';
+import VxeTableCom from './components/VxeTable/index.vue';
 export default {
   data() {
     return {
@@ -26,7 +26,7 @@ export default {
     ExtendIndex,
     DirectiveIndex,
     PermissionControl,
-    VxeTableFilter
+    VxeTableCom
   },
   methods: {}
 };

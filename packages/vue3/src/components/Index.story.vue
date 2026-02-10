@@ -7,7 +7,7 @@ const components = Object.values(import.meta.glob("./*/index.vue", { eager: true
 
 <template>
   <Story title="Base">
-    <Variant :title="component.name" v-for="(component,index) in components" :key="index">
+    <Variant :id="component.name" :title="component.name" v-for="(component,index) in components" :key="index">
       <component :is="component" />
     </Variant>
   </Story>

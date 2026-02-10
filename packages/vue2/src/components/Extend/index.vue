@@ -1,9 +1,9 @@
 <template>
   <div class="extend-index">
-    <h4>这是实现的渲染</h4>
+    <h4>这是Vue.extend实现的渲染</h4>
     <div id="extend"></div>
     <br/>
-    <h4>这是实现的innerHTML</h4>
+    <h4>这是Vue.extend实现的innerHTML</h4>
     <div ref="extendElement"></div>
   </div>
 </template>
@@ -28,9 +28,9 @@ export default {
       const extendInstance = new ExtendChild({
         propsData: {
           data: [
-            { id: 1, name: 'Vue.extend() 1' },
-            { id: 2, name: 'Vue.extend() 2' },
-            { id: 3, name: 'Vue.extend() 3' },
+            { id: 1, name: '1' },
+            { id: 2, name: '2' },
+            { id: 3, name: '3' },
           ]
       }
       })

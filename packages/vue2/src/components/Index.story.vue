@@ -5,7 +5,7 @@ const componentsList = Object.values(components)
 
 <template>
   <Story title="Base">
-    <Variant :title="component.name" v-for="(component, key) in componentsList" :key="key">
+    <Variant :id="component.name" :title="component.name" v-for="(component, key) in componentsList" :key="key">
       <component :is="component" />
     </Variant>
   </Story>

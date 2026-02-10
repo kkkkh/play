@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h3>{{ title }}</h3>
     <div v-for="item in data" :key="item.id">
       {{ item.name }}
     </div>

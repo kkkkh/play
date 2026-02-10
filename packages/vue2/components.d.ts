@@ -36,6 +36,8 @@ declare module 'vue' {
     Props: typeof import('./src/components/Props/index.vue')['default']
     SortableDrag: typeof import('./src/components/Directive/SortableDrag.vue')['default']
     TableScroll: typeof import('./src/components/Directive/TableScroll.vue')['default']
+    VxeTable: typeof import('./src/components/VxeTable/index.vue')['default']
+    VxeTableDemo: typeof import('./src/components/VxeTableDemo/index.vue')['default']
     VxeTableFilter: typeof import('./src/components/VxeTableFilter/index.vue')['default']
     VxeTablePlus: typeof import('./src/components/VxeTablePlus/index.vue')['default']
   }
