@@ -1,3 +1,4 @@
+// #region filterOptions
 export const FilterOptions = [
   { label: '等于', value: 'eq' },
   { label: '小于', value: 'lt' },
@@ -18,6 +19,8 @@ export const defaultConditions = {
   time: ['eq', 'between', 'isEmpty', 'isNotEmpty'],
   datetime: ['eq', 'lt', 'lte', 'gt', 'gte', 'between', 'isEmpty', 'isNotEmpty'],
 }
+
+// #endregion filterOptions
 
 export const DEFAULT_DATE_FORMAT = 'yyyy-MM-dd'
 

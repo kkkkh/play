@@ -22,6 +22,7 @@
     >
     </VxeColumn>
     </VxeTable>
+    <!-- // #region pagination -->
     <ElPagination
         class="tr-rich-table__pagination"
         :current-page="currentPage"
@@ -30,6 +31,7 @@
         @current-change="handleCurrentPageChange"
         @size-change="handlePageSizeChange"
       />
+    <!-- // #endregion pagination -->
   </div>
 </template>
 <script>
@@ -84,21 +86,22 @@ import { BaseFilterRenderName } from './constants';
       setTotal(val) {
         this.total = val
       },
-          getColumnWidth(column) {
-      if (column.width) return column.width
+      getColumnWidth(column) {
+        if (column.width) return column.width
 
-      switch (column.type) {
-        case 'selection':
-        case 'checkbox':
-        case 'radio': {
-          return 36
-        }
+        switch (column.type) {
+          case 'selection':
+          case 'checkbox':
+          case 'radio': {
+            return 36
+          }
 
-        default: {
-          return void 0
+          default: {
+            return void 0
+          }
         }
-      }
-    },
+      },
+      // #region filter-render
       getColumnFilterRender(column) {
         if (!column.field || column.filters === false) return void 0
 
@@ -115,6 +118,8 @@ import { BaseFilterRenderName } from './constants';
           },
         }
       },
+      // #endregion filter-render
+      // #region filters
       getColumnFilters(column) {
         if (!column.field || column.filters === false) return void 0
 
@@ -133,7 +138,6 @@ import { BaseFilterRenderName } from './constants';
         // 参数设置
         data.valueType = getColumnFilterValueType(column)
         data.valueFormat = getColumnFilterValueFormat(column, data.valueType)
-        debugger
         // 默认值设置
         if (!data.condition) {
           data.condition = getDefaultFilterCondition(data.valueType)
@@ -149,6 +153,7 @@ import { BaseFilterRenderName } from './constants';
 
         return filters
       },
+      // #endregion filters
     }
   }
 </script>

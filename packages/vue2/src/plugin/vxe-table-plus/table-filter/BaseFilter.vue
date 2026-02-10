@@ -146,6 +146,7 @@ export default {
 
       return ['isEmpty', 'isNotEmpty'].includes(this.condition)
     },
+    // #region filterComponent
     filterComponent() {
       if (this.isCustomOptions) {
         return TrTableFilterCustom
@@ -169,6 +170,7 @@ export default {
         }
       }
     },
+    // #endregion filterComponent
     defaultConditionOptions() {
       return FilterOptions.map((item) => ({
         label: item.label,
@@ -189,8 +191,9 @@ export default {
         typeof this.excludeConditions === 'function'
           ? this.excludeConditions()
           : this.excludeConditions
-
+      // #region condition
       const conditions = defaultConditions[this.valueType ?? 'default'] ?? []
+      // #endregion condition
 
       return conditions
         .filter((item) => !excludeConditions?.includes(item))

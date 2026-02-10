@@ -65,7 +65,6 @@ export default {
   },
   computed: {
     isCustomOptions() {
-      debugger
       return !!this.options?.length
     },
   },
@@ -82,15 +81,15 @@ export default {
     },
   },
   mounted() {
-    debugger
+    // #region data
     // 配置数据
     const { $table, column } = this.scope
-
     this.option = column.filters[0]?.data
       ? column.filters[0]
       : {
           data: getColumnDefaultFilterData(column),
         }
+    // #endregion data
     // 下拉选项
     if (this.isCustomOptions) {
       this.valueOptions = this.options
@@ -119,20 +118,26 @@ export default {
        */
       return []
     },
+    // #region reset
     handleReset() {
       const { $panel } = this.scope
+      // 调用 vxe-table 重置api
       $panel.resetFilter()
     },
+    // #endregion reset
+    // #region filter
     async handleFilter(evt) {
       try {
         await this.$refs.filter?.validate()
         const { $panel } = this.scope
+        // 调用 vxe-table 筛选api，触发 vxe-table @filter-change事件
         $panel.changeOption(evt, true, this.option)
         $panel.confirmFilter()
       } catch (e) {
         console.log(e)
       }
     },
+    // #endregion filter
   },
 }
 </script>
