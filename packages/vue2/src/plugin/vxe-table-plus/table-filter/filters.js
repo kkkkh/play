@@ -24,6 +24,7 @@ import {
  *
  * @returns {boolean}
  */
+// #region filter-string-value
 export function filterStringValue(n, filterData) {
   switch (filterData.condition) {
     case 'eq': {
@@ -48,7 +49,7 @@ export function filterStringValue(n, filterData) {
 
   return false
 }
-
+// #endregion filter-string-value
 /**
  * 过滤数字类型的值
  *
@@ -137,6 +138,7 @@ export function filterDateValue(n, filterData, valueType = 'date') {
  *
  * @returns {boolean}
  */
+// #region filter-value
 export function filterValue(n, filterData) {
   switch (filterData.valueType) {
     case 'string': {
@@ -155,3 +157,4 @@ export function filterValue(n, filterData) {
 
   return false
 }
+// #endregion filter-value

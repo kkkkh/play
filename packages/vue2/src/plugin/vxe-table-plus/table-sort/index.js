@@ -1,9 +1,11 @@
 import { getColumnFilterValueType } from '../base-table/utils'
 
+// #region sort-number
 const sortNumber = (dataA, dataB, order) => {
   // 数字比大小
   return order === 'asc' ? dataA - dataB : dataB - dataA
 }
+// #endregion sort-number
 const sortString = (dataA, dataB, order) => {
   // 字符串比大小
   return order === 'asc' ? dataA.localeCompare(dataB) : dataB.localeCompare(dataA)
@@ -14,6 +16,7 @@ const sortDateTime = (dataA, dataB, order) => {
   return order === 'asc' ? new Date(dataA) - new Date(dataB) : new Date(dataB) - new Date(dataA)
 }
 
+// #region sort-value
 export const sortValue = (a, b, val) => {
   const dataA = a[val.field]
   const dataB = b[val.field]
@@ -37,3 +40,5 @@ export const sortValue = (a, b, val) => {
     }
   }
 }
+// #endregion sort-value
+
