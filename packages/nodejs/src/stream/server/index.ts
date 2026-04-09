@@ -107,6 +107,7 @@ function streamZipFile(
   void archive.finalize()
 }
 
+// #region node-stream
 /**
  * 旧写法：Node.js Stream
  * 使用 fs.createReadStream(filePath).pipe(res)
@@ -145,7 +146,9 @@ async function sendFileByNodeStream(
 
   readStream.pipe(res)
 }
+// #endregion node-stream
 
+// #region web-stream
 // 把一个纯 Web 风格的底层字节缓冲区，包成 Node 风格的二进制块。
 const normalizeChunk = new TransformStream({
   transform(chunk, controller) {
@@ -165,8 +168,6 @@ const normalizeChunk = new TransformStream({
     controller.enqueue(chunk)
   }
 })
-
-
 /**
  * 新写法：Web Streams
  * 使用 fileHandle.readableWebStream() + Writable.toWeb(res)
@@ -226,7 +227,7 @@ async function sendFileByWebStream(
     }
   }
 }
-
+// #endregion web-stream
 /**
  * 路由表
  */
