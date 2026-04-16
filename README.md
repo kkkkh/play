@@ -17,8 +17,6 @@
 
 ### 运行时
 #### @play/nodejs
-[ts-node](https://typestrong.org/ts-node/docs/) 不支持 package.json 的 type:module
-watch ts文件改变，使用 [nodemon](https://github.com/remy/nodemon) 或者 [ts-node-dev](https://github.com/wclr/ts-node-dev)
 #### @play/bun
 
 

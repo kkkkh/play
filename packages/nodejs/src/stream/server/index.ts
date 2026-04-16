@@ -3,7 +3,8 @@ import fs from 'node:fs'
 import { open } from 'node:fs/promises'
 import path from 'node:path'
 import archiver from 'archiver'
-import { Writable } from 'node:stream'
+import { Writable, Readable } from 'node:stream'
+import { pipeline } from 'node:stream/promises'
 
 const PORT = 3000
 
@@ -107,7 +108,46 @@ function streamZipFile(
   void archive.finalize()
 }
 
-// #region node-stream
+async function sendGenerateChunksByNodeStream(
+  res: ServerResponse,
+): Promise<void> {
+  try {
+    // 把“程序逐步生成的数据”也当成流。
+    async function* generateChunks() {
+      yield 'part1\n'
+      yield 'part2\n'
+      yield 'part3\n'
+    }
+    const generateChunksStream = Readable.from(generateChunks())
+    res.setHeader('Content-Type', 'text/plain');
+    res.setHeader('Content-Disposition', `attachment; filename="generateChunks.text"`);
+    await pipeline(generateChunksStream, res);
+
+  } catch (err) {
+    console.error('sendgenerateChunksByNodeStream failed.', err);
+  }
+}
+
+async function sendStringByNodeStream(
+  res: ServerResponse,
+): Promise<void> {
+  try {
+    const largeString = '********1111111111111111';
+    // Readable.from(data) 返回的是 Node Readable，不是 Web ReadableStream
+    // Readable.from(data)：更适合把内存里已有的数据（string、Buffer、Array、Iterable、AsyncIterable）包装成可读流
+    const stringStream = Readable.from(largeString);
+
+    res.setHeader('Content-Type', 'text/plain');
+    res.setHeader('Content-Disposition', `attachment; filename="string.text"`);
+    res.setHeader('Content-Length', largeString.length);
+
+    // stringStream.pipe(res);
+    await pipeline(stringStream, res);
+  } catch (err) {
+    console.error('sendStringByNodeStream failed.', err);
+  }
+}
+
 /**
  * 旧写法：Node.js Stream
  * 使用 fs.createReadStream(filePath).pipe(res)
@@ -131,6 +171,7 @@ async function sendFileByNodeStream(
   res.setHeader('Content-Disposition', `attachment; filename="${downloadFileName}"`)
   res.setHeader('Content-Length', (await fs.promises.stat(filePath)).size)
 
+  // fs.createReadStream(...)：更适合从文件这种外部数据源里读取
   const readStream = fs.createReadStream(filePath)
 
   readStream.on('error', (err) => {
@@ -143,12 +184,11 @@ async function sendFileByNodeStream(
 
     res.destroy(err)
   })
-
+  // 把文件内容直接写到 HTTP 响应里。
   readStream.pipe(res)
+  // await pipeline(readStream, res)
 }
-// #endregion node-stream
 
-// #region web-stream
 // 把一个纯 Web 风格的底层字节缓冲区，包成 Node 风格的二进制块。
 const normalizeChunk = new TransformStream({
   transform(chunk, controller) {
@@ -168,6 +208,8 @@ const normalizeChunk = new TransformStream({
     controller.enqueue(chunk)
   }
 })
+
+
 /**
  * 新写法：Web Streams
  * 使用 fileHandle.readableWebStream() + Writable.toWeb(res)
@@ -227,7 +269,7 @@ async function sendFileByWebStream(
     }
   }
 }
-// #endregion web-stream
+
 /**
  * 路由表
  */
@@ -254,6 +296,21 @@ const routes: Record<string, RouteHandler> = {
       zipFileName: 'archive.zip',
       entryName: '1937330293275095040.Lab'
     })
+  },
+  /**
+   * 直接返回现成字符串（Node Stream 写法）
+   */
+  '/getStringByNodeStream': async (req, res) => {
+    console.log('getStringByNodeStream')
+    await sendStringByNodeStream(res)
+  },
+
+  /**
+   * 直接返回生成器字符串（Node Stream 写法）
+   */
+  '/getGenerateChunksByNodeStream': async (req, res) => {
+    console.log('getGenerateChunksByNodeStream')
+    await sendGenerateChunksByNodeStream(res)
   },
 
   /**

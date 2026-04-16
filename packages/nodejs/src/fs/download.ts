@@ -7,7 +7,7 @@ const app = express();
 
 app.get('/download', async (req: any, res: any) => {
   console.log('download server');
-  const filePath = path.resolve(__dirname, '../files/download/example.txt'); // 替换为你的文件路径
+  const filePath = path.resolve(__dirname, '../files/example.txt'); // 替换为你的文件路径
   const filename = 'example1.txt'; // 替换为你的文件名
   // 设置 Content-Type
   // res.setHeader('Content-Type', 'application/pdf');

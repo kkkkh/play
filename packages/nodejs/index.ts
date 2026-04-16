@@ -1,7 +1,7 @@
-import fs from './src/fs/main';
 
 const main = async () => {
-  await fs();
+  await Promise.resolve(123);
+  console.log(123);
 }
 
 main()

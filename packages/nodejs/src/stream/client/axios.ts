@@ -1,6 +1,6 @@
 import fs from 'node:fs'
-import { extractFile } from './extractFile'
-import { removeFileOrDir } from '../../../src/fs/main'
+import { extractFile } from '../../fs'
+import { removeFileOrDir } from '../../fs'
 import { AxiosResponse } from 'axios'
 
 export function processFileStream(response: AxiosResponse, destDir: string, tempFile: string) {
@@ -18,7 +18,7 @@ export function processFileStream(response: AxiosResponse, destDir: string, temp
       response.data.pipe(fileStream)
       console.log()
       fileStream.on('finish', () => {
-        extractFile(uniqueTempPath, destDir, resolve, reject)
+        extractFile(uniqueTempPath, destDir)
       })
       fileStream.on('error', (error) => {
         void removeFileOrDir(uniqueTempPath)
